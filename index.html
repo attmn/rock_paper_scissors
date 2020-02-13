@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+        <input type="text" id="playerSelection" name="playerSelection"></input>
+        <input type="submit" value="Submit">
+    </form>
+      
+    <script>
+        function computerPlay() {
+            let possibleMoves = ["rock", "paper", "scissors"];
+            computerSelection1 = Math.floor(Math.random() * possibleMoves.length);
+            return possibleMoves[computerSelection1];
+        }
+
+        function playRound(playerSelection, computerSelection) {
+            if (playerSelection == "rock" & computerSelection == "scissors") {
+                return `${playerSelection} beat(s) ${computerSelection}. You win!`;
+            } else if (playerSelection == "paper" & computerSelection == "rock") {
+                return `${playerSelection} beat(s) ${computerSelection}. You win!`;
+            } else if (playerSelection == "scissors" & computerSelection == "paper") {
+                return `${playerSelection} beat(s) ${computerSelection}. You win!`;
+            } else if (playerSelection == computerSelection) {
+                return "It's a draw!";
+            } else {
+                return `${computerSelection} beat(s) ${playerSelection}. You lose!`;
+            }
+        }
+
+        const computerSelection = computerPlay();
+        const playerSelection = "PAper".toLowerCase();
+
+      console.log(playRound(playerSelection, computerSelection));
+    </script>
+  </body>
+</html>
